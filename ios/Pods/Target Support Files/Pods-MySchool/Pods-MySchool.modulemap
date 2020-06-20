@@ -1,0 +1,6 @@
+module Pods_MySchool {
+  umbrella header "Pods-MySchool-umbrella.h"
+
+  export *
+  module * { export * }
+}
