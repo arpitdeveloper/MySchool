@@ -32,14 +32,16 @@ export default class AddChild extends Component {
     }
     UNSAFE_componentWillMount() {
         console.log(this.props.route)
-        
-        let ref = "/Message/" + firebase.auth().currentUser.uid + '/' + this.props.route.params.uid;
-        firebase.database().ref(ref).on("value", snapshot => {
-            //console.log("ss", firebase.auth().currentUser.uid)
-            //console.log("change child", snapshot.val())
-            this.changeData(snapshot.val())
-            //this.state.messageList.push(snapshot.val())
-        })
+        if (firebase.auth().currentUser){
+            let ref = "/Message/" + firebase.auth().currentUser.uid + '/' + this.props.route.params.uid;
+            firebase.database().ref(ref).on("value", snapshot => {
+                //console.log("ss", firebase.auth().currentUser.uid)
+                //console.log("change child", snapshot.val())
+                this.changeData(snapshot.val())
+                //this.state.messageList.push(snapshot.val())
+            })
+        }
+       
 
         this.showChat()
     }
@@ -174,14 +176,26 @@ export default class AddChild extends Component {
 
                 />
                 <View style={styles.container}>
-                    <TextInput style={styles.textstyle}
-                        placeholder='message'
-                        onChangeText={this.handleChnageText('textMessage')}
-                        value={this.state.textMessage}
-                        autoCapitalize='none'
-                        autoCorrect={false}
-                       // multiline={true}
-                    />
+                    <View style={[styles.textstyle,{flex:1, flexDirection:'row'}]}>
+                        
+                        
+                        <TextInput 
+                        style={{flex:1}}
+                            placeholder='message'
+                            onChangeText={this.handleChnageText('textMessage')}
+                            value={this.state.textMessage}
+                            autoCapitalize='none'
+                            autoCorrect={false}
+                        // multiline={true}
+                        />
+                        <TouchableOpacity style={{
+                            marginRight: 0,
+                            alignSelf:'flex-end'
+                        }}>
+                            <Image source={require('../img/attach.png')} style={{ height: 20, width: 20, tintColor: 'gray' }} resizeMode="contain" />
+                        </TouchableOpacity>
+                    </View>
+                   
                     <TouchableOpacity style={styles.buttonContainer} onPress={this.SendMessage}>
                         <Image source={require('../img/send.png')} style={{ height: 20, width: 20,  tintColor:'white' }} resizeMode="contain" />
                     </TouchableOpacity>
@@ -209,7 +223,7 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         paddingBottom:15,
         backgroundColor:'white',
-        borderRadius: 10,
+        borderRadius: 25,
         marginLeft:5,
         maxHeight:100,
         shadowColor: '#BBDEFB',

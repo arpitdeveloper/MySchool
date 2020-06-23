@@ -1432,21 +1432,26 @@ drawable src_img_back
 drawable src_img_backa
 drawable src_img_book
 drawable src_img_busloc
+drawable src_img_cam
 drawable src_img_chat
 drawable src_img_envelopes
+drawable src_img_gard
 drawable src_img_homework
 drawable src_img_imgback
 drawable src_img_list
 drawable src_img_lock
 drawable src_img_logo
+drawable src_img_mail
 drawable src_img_menu
 drawable src_img_padd
+drawable src_img_phone
 drawable src_img_search
 drawable src_img_send
 drawable src_img_student
 drawable src_img_tadd
 drawable src_img_timetable
 drawable src_img_user
+drawable src_img_username
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1857,6 +1862,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dev_loading_view
 layout fps_view
+layout list_item
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -2314,6 +2320,7 @@ style CardView_Dark
 style CardView_Light
 style ClockTimePickerDialog
 style ClockTimePickerStyle
+style DefaultExplainingPermissionsTheme
 style DialogAnimationFade
 style DialogAnimationSlide
 style EmptyTheme
@@ -2878,6 +2885,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml provider_paths
 xml rn_dev_preferences
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end

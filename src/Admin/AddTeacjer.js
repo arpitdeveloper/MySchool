@@ -41,8 +41,8 @@ export default class AddChild extends Component {
             firebase.auth().createUserWithEmailAndPassword(email, pass)
                 .then(result => {
                     // This is the success path
-                    console.log('result data:-----', firebase.auth().currentUser.uid)
-                    if (firebase.auth().currentUser.uid) {
+                  //  console.log('result data:-----', firebase.auth().currentUser.uid)
+                    if (firebase.auth().currentUser) {
                         let ref = "/users/" + firebase.auth().currentUser.uid;
                         firebase.database().ref(ref).set({
                             userType: 'Teacher',

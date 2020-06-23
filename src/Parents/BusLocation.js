@@ -67,12 +67,15 @@ export default class Home extends Component {
                 //onUserLocationChange={(ooo) => console.log(ooo.nativeEvent)}
 
                 >
-                    <TouchableOpacity
-                        onPress={() => this.props.navigation.toggleDrawer()}
-                        style={{ height: 50, width: 50, marginTop: 30, marginLeft: 20 }}>
-                        <Image source={require('../img/menu.png')} style={{ height: 30, width: 30, }} resizeMode="contain" />
+                    <SafeAreaView>
+                        <TouchableOpacity
+                            onPress={() => this.props.navigation.toggleDrawer()}
+                            style={{ height: 50, width: 50, marginTop: 15, marginLeft: 20 }}>
+                            <Image source={require('../img/menu.png')} style={{ height: 30, width: 30, }} resizeMode="contain" />
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
+                    </SafeAreaView>
+
 
                 </MapView>
             </View>

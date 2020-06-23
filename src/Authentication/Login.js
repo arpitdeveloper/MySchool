@@ -68,6 +68,9 @@ export default class App extends Component {
             firebase.auth().signInWithEmailAndPassword(email, pass)
                 .then(result => {
                     // This is the success path
+                    if (firebase.auth().currentUser){
+
+                    
                     firebase.database().refFromURL('https://schoolapp-88d39.firebaseio.com/').child('users').child(firebase.auth().currentUser.uid).once('value').then(snapshot => {
                         var userData = snapshot.val();
                         console.log(userData)
@@ -90,6 +93,7 @@ export default class App extends Component {
                             Alert.alert("Alert", 'User is not Avaliable');
                         }
                     })
+                    }
 
                 }).catch(error => {
 

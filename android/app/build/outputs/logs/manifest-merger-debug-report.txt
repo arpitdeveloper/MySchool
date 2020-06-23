@@ -10,8 +10,8 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] /Users/apple/.g
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.33.1] /Users/apple/.gradle/caches/transforms-2/files-2.1/bbbdbe5482fa5c3c53472335ff01e68b/jetified-flipper-fresco-plugin-0.33.1/AndroidManifest.xml:8:1-15:12
 MERGED from [:react-native-community_async-storage] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_masked-view] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-document-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-document-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:react-native-maps] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [:react-native-reanimated] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-safe-area-context] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -20,6 +20,7 @@ MERGED from [:react-native-vector-icons] /Users/apple/Documents/Rajesh shinde/Sc
 MERGED from [com.facebook.react:react-native:0.62.2] /Users/apple/.gradle/caches/transforms-2/files-2.1/08135ebcfb1fac0324bd3924e6b902ca/jetified-react-native-0.62.2/AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/39b4f59a835527a351392d1b387458e1/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [org.webkit:android-jsc:r245459] /Users/apple/.gradle/caches/transforms-2/files-2.1/c95368a818e2dc0e1580995fc7865708/jetified-android-jsc-r245459/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-linear-gradient] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.fresco:flipper:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/1044b099da41fb93cf9ddce46e4d4fef/jetified-flipper-2.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:stetho:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/ba6ef64dd14b961b881532a1a79850dd/jetified-stetho-2.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/01a13aec79aa97e2571f76f0b5ed50e3/jetified-fresco-2.0.0/AndroidManifest.xml:2:1-9:12
@@ -100,6 +101,8 @@ application
 ADDED from /Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/AndroidManifest.xml:6:5-26:19
 MERGED from /Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/AndroidManifest.xml:6:5-26:19
 MERGED from /Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/AndroidManifest.xml:6:5-26:19
+MERGED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-native:0.62.2] /Users/apple/.gradle/caches/transforms-2/files-2.1/08135ebcfb1fac0324bd3924e6b902ca/jetified-react-native-0.62.2/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.react:react-native:0.62.2] /Users/apple/.gradle/caches/transforms-2/files-2.1/08135ebcfb1fac0324bd3924e6b902ca/jetified-react-native-0.62.2/AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.8.2] /Users/apple/.gradle/caches/transforms-2/files-2.1/3fe6c19c781b99051901d845b492907a/jetified-soloader-0.8.2/AndroidManifest.xml:11:5-20
@@ -198,10 +201,10 @@ MERGED from [:react-native-community_async-storage] /Users/apple/Documents/Rajes
 MERGED from [:react-native-community_async-storage] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_masked-view] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-document-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-document-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-document-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-document-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-maps] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-maps] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-reanimated] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
@@ -218,6 +221,8 @@ MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/apple/
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/39b4f59a835527a351392d1b387458e1/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [org.webkit:android-jsc:r245459] /Users/apple/.gradle/caches/transforms-2/files-2.1/c95368a818e2dc0e1580995fc7865708/jetified-android-jsc-r245459/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /Users/apple/.gradle/caches/transforms-2/files-2.1/c95368a818e2dc0e1580995fc7865708/jetified-android-jsc-r245459/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-linear-gradient] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-linear-gradient] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-linear-gradient/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.fresco:flipper:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/1044b099da41fb93cf9ddce46e4d4fef/jetified-flipper-2.0.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:flipper:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/1044b099da41fb93cf9ddce46e4d4fef/jetified-flipper-2.0.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:stetho:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/ba6ef64dd14b961b881532a1a79850dd/jetified-stetho-2.0.0/AndroidManifest.xml:5:5-7:41
@@ -326,6 +331,22 @@ uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from [com.facebook.flipper:flipper:0.33.1] /Users/apple/.gradle/caches/transforms-2/files-2.1/ba85e5c610365242e2fd3b7d92141bb3/jetified-flipper-0.33.1/AndroidManifest.xml:16:5-76
 	android:name
 		ADDED from [com.facebook.flipper:flipper:0.33.1] /Users/apple/.gradle/caches/transforms-2/files-2.1/ba85e5c610365242e2fd3b7d92141bb3/jetified-flipper-0.33.1/AndroidManifest.xml:16:22-73
+provider#com.imagepicker.FileProvider
+ADDED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-60
+	android:exported
+		ADDED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-56
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-17:58
+	android:resource
+		ADDED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-55
+	android:name
+		ADDED from [:react-native-image-picker] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-67
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from [:react-native-maps] /Users/apple/Documents/Rajesh shinde/School/MySchool/node_modules/react-native-maps/lib/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-81
 	android:name

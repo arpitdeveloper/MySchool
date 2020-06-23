@@ -20,6 +20,7 @@ import {
 
 //import LinearGradient from 'react-native-linear-gradient';
 import firebase from "firebase";
+import Loader from '../Design/Loader'
 import ImagePicker from 'react-native-image-picker';
 
 
@@ -27,6 +28,7 @@ const height = Dimensions.get('window').height
 const width1 = Dimensions.get('window').width
 
 var today = new Date();
+
 export default class ClassList extends Component {
 
     constructor(props) {
@@ -35,141 +37,128 @@ export default class ClassList extends Component {
             classlabel: 'Select Class',
             sectionlabel: 'Select Section',
             subjectlabel: 'Select Subject',
-       
+            uid:'',
+            isLoad:false,
+            imgUrl:'',
         };
     }
     componentDidMount() {
-       
+       if (firebase.auth().currentUser){
+            this.setState({uid: firebase.auth().currentUser.uid})
+            this.setState({imgUrl: firebase.auth().currentUser.photoURL})
+       }
+    }
+    uriToBlob = (uri) => {
+        return new Promise((resolve, reject) => {
+            
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                // return the blob
+                console.log("resolve:- ", xhr.response)
+               // console.log("reject:- ", reject)
+                resolve(xhr.response);
+            };
+
+            xhr.onerror = function () {
+                // something went wrong
+                console.log("resolve:- rejct")
+                reject(new Error('uriToBlob failed'));
+            };
+            // this helps us get a blob
+            xhr.responseType = 'blob';
+            xhr.open('GET', uri, true);
+
+            xhr.send(null);
+        });
+    }
+    uploadToFirebase = (blob) => {
+        return new Promise((resolve, reject) => {
+            var storageRef = firebase.storage().ref();
+            //const time = firebase.database().ServerValue.TIMESTAMP
+           // var time1 = new Date()
+            const time = Date.now()
+            const fileData = blob.data.name
+
+            const uriPart = fileData.split('.');
+
+            const fileExtension = uriPart[1]
+            //console.log('******* Blob*********: - ', time.getTime())
+
+            const fileName = "IMG_"+time+"."+fileExtension
+            storageRef.child('uploads/'+this.state.uid+'/'+fileName).put(blob, {
+                contentType: 'image/' + fileExtension
+            }).then((snapshot) => {
+                blob.close();
+                this.setState({isLoad:false})
+                
+                console.log("snapshot: " + snapshot.state);
+                console.log("progress: " + (snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+
+                if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
+                    console.log("Success");
+                    var starsRef = storageRef.child('uploads/' + this.state.uid + '/' + fileName);
+
+
+                    starsRef.getDownloadURL().then(function (url) {
+                        // Insert url into an <img> tag to "download"
+                        console.log('url:-----',url)
+                        var user = firebase.auth().currentUser;
+
+                        user.updateProfile({
+                            //displayName: "Jane Q. User",
+                            photoURL: url
+                        }).then(function (n) {
+                            // Update successful.
+                            console.log(firebase.auth().currentUser)
+                        }).catch(function (error) {
+                            // An error happened.
+                        });
+
+                    }).catch(function (error) {
+
+                        // A full list of error codes is available at
+                        console.log(error)
+                    });
+                }
+                resolve(snapshot);
+            }).catch((error) => {
+                this.setState({ isLoad: false })
+                reject(error);
+            });
+        });
     }
     onImageClick = () => {
-        // console.log('one image click///////////===============================')
-        const options = {
 
-            customButtons: [{ name: 'fb', title: 'Remove Photo' }],
-            storageOptions: {
-                skipBackup: true,
-                path: 'images',
-            },
-        };
+        ImagePicker.launchImageLibrary({ mediaType: 'photo' }, (result) =>{
 
-        ImagePicker.showImagePicker(options, (response) => {
-            console.log('Response = ', response.uri);
+            if (!result.cancelled) {
+                this.setState({isLoad:true})
+                try {
+                // User picked an image
 
-            if (response.didCancel) {
-                // console.log('User cancelled image picker');
-            } else if (response.error) {
-                // console.log('ImagePicker Error: ', response.error);
-            } else if (response.customButton) {
-                //  console.log('User tapped custom button: ', response.customButton);
-                this.removeProfilePicture()
-                this.setState({ imgPath: '' })
-            } else {
+                const { height, width, type, uri } = result;
+             
+                const bl = this.uriToBlob(uri).then((blob) => {
+                    const fl = this.uploadToFirebase(blob);
+                    fl.then((snapshotf) => {
+                        
+                        console.log('Upload: - ')
+                    })
 
-
-                if (Platform.OS == 'android') {
-
-                    console.log('image url//////////////////[--------anderoid/////-uri]', response.uri)
-                    const ss = 'file:///' + response.path
-                    console.log('image url//////////////////[--------anderoid/////-]', ss)
-                    const source = response.uri;
-                    this.updateProfilePicture(ss)
-                } else {
-                    const source = response.uri;
-                    try {
-                    var storageRef = firebase.storage().ref();
-                    var thisRef = storageRef.child("user/");
-                    
-                    thisRef.put(response.data).then(function (snapshot) {
-                        console.log('Uploaded a blob or file!',JSON.stringify(snapshot));
-                    }
-                   
-                    );
-                    } catch (error) {
-                        console.log('------in file', JSON.stringify(error))
-                        //console.log(error.toString(JSON.stringify(error));
-                    }
-                    this.updateProfilePicture(source)
+                });
+                console.log(bl)
+                } catch (error) {
+                    console.log('------in file', JSON.stringify(error))
+                    //console.log(error.toString(JSON.stringify(error));
                 }
 
             }
-        });
+
+        })
+
     }
-    updateProfilePicture = (imgURL) => {
-
-        const uriPart = imgURL.split('.');
-       
-        const filename = uriPart[uriPart.length - 2];
-        const fileExtension = uriPart[uriPart.length - 1];
-
-        var userdata = { Image: uriPart }
-        try {
-            var storageRef = firebase.storage().ref();
-            var metadata = {
-                contentType: 'image/'+ fileExtension,
-            };
-            let nameI = filename+'.'+fileExtension 
-            // Upload the file and metadata
-            var uploadTask = storageRef.child('images/'+nameI).put(imgURL, metadata);
-
-            console.log('------')
-            console.log(JSON.stringify(uploadTask))
-            // console.log('=======', firebasedata.auth())
-            // var demo = firebasedata.auth().currentUser.uid;
-            // console.log(demo)
-
-            // mDatabase = firebase.database().ref('user').child(demo).push(userdata);
-
-
-        } catch (error) {
-            console.log('------', JSON.stringify(error))
-            //console.log(error.toString(JSON.stringify(error));
-        }
-
-        // const data = new FormData();
-        // data.append('userid', this.state.userid); // you can append anyone.
-        // data.append('username', this.state.username);
-        // data.append('email', this.state.useremail);
-        // data.append('profilepicture', {
-        //     uri: imgURL,
-        //     type: 'image/' + fileExtension, // or photo.type
-        //     name: 'testPhotoName.' + fileExtension
-        // });
-        // //console.log('...................')
-        // // console.log('userid......', this.state.userid)
-      //item.from === firebase.auth().currentUser.uid ? 'flex-end' : 'flex-start'
-/*
-var user = firebase.auth().currentUser;
-
-user.updateProfile({
-  displayName: "Jane Q. User",
-  photoURL: "https://example.com/jane-q-user/profile.jpg"
-}).then(function() {
-  // Update successful.
-}).catch(function(error) {
-  // An error happened.
-});
-*/
-    }
-    // uplod = () => {
-    //     var fileimage = this.state.imagedata;
-    //     var document = this.state.dcmt;
-
-    //     var userdata = { Image: fileimage, Document: document }
-
-    //     try {
-
-    //         console.log('=======', firebasedata.auth())
-    //         var demo = firebasedata.auth().currentUser.uid;
-    //         console.log(demo)
-
-    //         mDatabase = firebasedata.database().ref('user').child(demo).push(userdata);
-
-
-    //     } catch (error) {
-    //         console.log(error.toString(error));
-    //     }
-
-    // };
+    
+    
     handleEmail = (text) => {
         this.setState({ note: text })
         console.log(text)
@@ -188,7 +177,7 @@ user.updateProfile({
                         </ImageBackground>
                     </View>
                     <View style={styles.imgBack}>
-                        <Image source={require('../img/user.png')} style={{ width: '100%', flex: 1 }} resizeMode="cover" />
+                    <Image  source={{ uri:this.state.imgUrl}} style={{ width: '100%', flex: 1, borderRadius:50, borderWidth:0.5, borderColor:'gray' }} resizeMode="cover" />
                     </View>
                     <View style={{flex:1, width:'100%', marginTop:30}}>
                         <View style={styles.menuView} >
@@ -207,6 +196,12 @@ user.updateProfile({
                             {firebase.auth().currentUser != null ? firebase.auth().currentUser.email : 'emty'}</Text>
                         </View>
                         <View style={styles.lineVIEW} />
+                    <View style={styles.menuView} >
+                        <Image source={require('../img/calendar.png')} style={styles.userImage} resizeMode="cover" />
+                        <Text style={styles.text}>
+                            {today.getDate() +"-"+ today.getMonth() +"-"+today.getFullYear()}</Text>
+                    </View>
+                    <View style={styles.lineVIEW} />
                      
                         
                     </View>
@@ -227,6 +222,7 @@ user.updateProfile({
                     <Image source={require('../img/menu.png')} style={{ height: 30, width: 30, }} resizeMode="contain" />
 
                 </TouchableOpacity>
+                {this.state.isLoad ? <Loader /> : null}
             </SafeAreaView>
                 
         
@@ -261,6 +257,7 @@ const styles = StyleSheet.create({
         marginTop: - 50,
         marginLeft: 20,
         borderRadius: 50,
+        
         // shadowColor: 'gray',
         // shadowOffset: {
         //     width: 0.2,

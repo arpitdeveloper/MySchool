@@ -38,7 +38,8 @@ import PHome from './src/Parents/PHome';
 import BusLocation from './src/Parents/BusLocation';
 import ChatList from './src/Parents/ChatList';
 import Chat from './src/Parents/Chat';
-
+import SHomeWork from './src/Parents/SHomeWork'
+import ShowHome from './src/Parents/ShowHome'
 //------------------------Other-------------------------------------
 import SideMenu from "./src/Drawer/SideMenu"
 import Profile from "./src/Profile/Profile"
@@ -106,6 +107,7 @@ admin() {
       <Drawer.Screen name="ChatList" component={ChatList} />
       <Drawer.Screen name="Chat" component={Chat} />
       <Drawer.Screen name="Profile" component={Profile} />
+      
     </Drawer.Navigator>
   )
 }
@@ -130,6 +132,8 @@ teach() {
          <Drawer.Screen name="ChatList" component={ChatList} />
          <Drawer.Screen name="Chat" component={Chat} />
          <Drawer.Screen name="Profile" component={Profile} />
+         <Drawer.Screen name="SHomeWork" component={SHomeWork} />
+         <Drawer.Screen name="ShowHome" component={ShowHome} />
        </Drawer.Navigator>
      )
    

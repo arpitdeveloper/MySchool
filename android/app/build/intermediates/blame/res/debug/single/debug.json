@@ -8,8 +8,16 @@
         "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/drawable-mdpi/src_img_busloc.png"
     },
     {
+        "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_img_username.png.flat",
+        "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/drawable-mdpi/src_img_username.png"
+    },
+    {
         "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_img_send.png.flat",
         "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/drawable-mdpi/src_img_send.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_img_mail.png.flat",
+        "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/drawable-mdpi/src_img_mail.png"
     },
     {
         "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_img_padd.png.flat",
@@ -52,6 +60,10 @@
         "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/drawable-xxxhdpi/node_modules_reactnavigation_stack_src_views_assets_backicon.png"
     },
     {
+        "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_img_phone.png.flat",
+        "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/drawable-mdpi/src_img_phone.png"
+    },
+    {
         "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
@@ -72,6 +84,10 @@
         "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/drawable-mdpi/src_img_logo.png"
     },
     {
+        "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_img_cam.png.flat",
+        "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/drawable-mdpi/src_img_cam.png"
+    },
+    {
         "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
@@ -86,6 +102,10 @@
     {
         "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_img_gard.png.flat",
+        "source": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/src/main/res/drawable-mdpi/src_img_gard.png"
     },
     {
         "merged": "/Users/apple/Documents/Rajesh shinde/School/MySchool/android/app/build/intermediates/res/merged/debug/drawable-mdpi_src_img_back.jpg.flat",
